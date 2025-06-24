@@ -1,0 +1,20 @@
+{
+  "posts": [
+    {
+      "title": "Dragon Motor Testing",
+      "author": "Stevo simple boy",
+      "date": "2025-06-24",
+      "content": "Kenyan comedian",
+      "tags": [],
+      "id": 1
+    },
+    {
+      "title": "java learning",
+      "author": "Joe",
+      "date": "2025-06-24",
+      "content": "javascript is an advanced programing language, it is a fundamental language for new developers",
+      "tags": [],
+      "id": 2
+    }
+  ]
+}
