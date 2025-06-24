@@ -121,23 +121,17 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             // For new post
             modalTitle.textContent = 'Create New Post';
-            postIdInput.value = ''; // Clear ID for new post
+            postIdInput.value = ''; 
             const today = new Date();
             postDateInput.value = today.toISOString().split('T')[0];
         }
-        postModal.classList.remove('hidden'); // Show the modal
+        postModal.classList.remove('hidden'); 
     }
 
-    /**
-     * Hides the post creation/editing modal.
-     */
     function hidePostModal() {
-        postModal.classList.add('hidden'); // Hide the modal
+        postModal.classList.add('hidden'); 
     }
 
-    /**
-     * Handles the submission of the post form (create or edit).
-     */
     async function handlePostFormSubmit(event) {
         event.preventDefault(); // Prevent default form submission
 
@@ -149,7 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const tags = postTagsInput.value.split(',').map(tag => tag.trim()).filter(tag => tag !== '');
 
         if (!title || !author || !date || !content) {
-            // In a production app, use a custom message box instead of console.warn
+            
             console.warn("Please fill in all required fields (Title, Author, Date, Content).");
             return;
         }
@@ -193,19 +187,16 @@ document.addEventListener('DOMContentLoaded', () => {
                     throw new Error(`Failed to create post: ${response.statusText}`);
                 }
             }
-            // After successful operation, re-fetch and re-render posts
+            // re-fetch and re-render posts
             posts = await fetchBlogPosts();
             renderBlogPosts();
-            hidePostModal(); // Hide the modal
+            hidePostModal(); 
         } catch (error) {
             console.error('Error saving post:', error);
-            // Implement a user-friendly error message here
+            
         }
     }
 
-    /**
-     * Initiates the editing process for a given post ID.
-     */
     function editPost(id) {
         const postToEdit = posts.find(post => post.id === id);
         if (postToEdit) {
@@ -215,11 +206,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    /**
-     * Deletes a post with the given ID.
-     */
     async function deletePost(id) {
-        // Using confirm for simplicity; replace with custom modal in production for better UX
+       
         if (confirm("Are you sure you want to delete this post? This action cannot be undone.")) {
             try {
                 const response = await fetch(`${API_URL}/${id}`, {
@@ -229,12 +217,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     throw new Error(`Failed to delete post: ${response.statusText}`);
                 }
                 console.log(`Post with ID ${id} deleted from server.`);
-                // After successful deletion, re-fetch and re-render posts
+                
                 posts = await fetchBlogPosts();
                 renderBlogPosts();
             } catch (error) {
                 console.error('Error deleting post:', error);
-                // Implement a user-friendly error message here
+               
             }
         }
     }
@@ -244,7 +232,7 @@ document.addEventListener('DOMContentLoaded', () => {
     cancelPostBtn.addEventListener('click', hidePostModal);
     postForm.addEventListener('submit', handlePostFormSubmit);
 
-    // Initial load of blog posts when the page loads
+    
     (async () => {
         posts = await fetchBlogPosts();
         renderBlogPosts();
