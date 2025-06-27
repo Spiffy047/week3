@@ -2,7 +2,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     // API Endpoint for json-server
-    const API_URL = 'http://localhost:3000/posts';
+    const API_URL = 'https://week3-ss0e.onrender.com/posts';
 
     // DOM elements
     const postsContainer = document.getElementById('posts-container');

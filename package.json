@@ -4,7 +4,8 @@
   "description": "Code Challenge Blog This is a simple single-page blog application built with HTML, CSS (Tailwind CSS), and JavaScript, demonstrating basic CRUD (Create, Read, Update, Delete) operations on blog posts. It uses json-server as a mock backend API for data persistence.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "json-server --watch db.json --port 3000"
   },
   "repository": {
     "type": "git",
