@@ -1,0 +1,23 @@
+{
+  "name": "week3-code-challenge",
+  "version": "1.0.0",
+  "description": "Code Challenge Blog This is a simple single-page blog application built with HTML, CSS (Tailwind CSS), and JavaScript, demonstrating basic CRUD (Create, Read, Update, Delete) operations on blog posts. It uses json-server as a mock backend API for data persistence.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Spiffy047/week3.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Spiffy047/week3/issues"
+  },
+  "homepage": "https://github.com/Spiffy047/week3#readme",
+  "dependencies": {
+    "json-server": "^1.0.0-beta.3"
+  }
+}
